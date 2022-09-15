@@ -1,0 +1,35 @@
+﻿@model ChangeRoleVM
+@{
+    ViewData["Title"] = "Update";
+}
+
+<h2>@Model.Username</h2>
+<form method="post" enctype="multipart/form-data">
+
+    <div class="form-group">
+        <label for="exampleFormControlSelect1">Rolu Dəyiş</label>
+        <select class="form-control" name="newRole">
+            <option></option>
+            @foreach (string role in Model.Roles)
+            {
+
+
+                @if (Model.Role == role)
+                {
+                    <option selected value="@role">@role</option>
+                }
+                else
+                {
+                    <option value="@role">@role</option>
+                }
+            }
+        </select>
+    </div>
+
+    <button type="submit" class="btn btn-primary"><i class="mdi mdi-folder-plus"></i>Update</button>
+    <a asp-controller="Users" asp-action="Index" class="btn btn-success"><i class="mdi mdi-folder-upload"></i>Go Back</a>
+</form>
+@section Scripts{
+    <script src="https://cdn.ckeditor.com/ckeditor5/30.0.0/classic/ckeditor.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/jquery.validate.min.js"></script>
+}

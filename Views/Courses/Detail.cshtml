@@ -1,0 +1,28 @@
+﻿@model Course
+@{
+    ViewData["Title"] = "Detail";
+}
+
+<h1>@Model.Ad</h1>
+<form method="post" enctype="multipart/form-data">
+    <div class="form-group">
+        <label asp-for="@Model.Ad"></label>
+        <input asp-for="@Model.Ad" type="text" class="form-control">
+        <span asp-validation-for="@Model.Ad" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="@Model.Description"></label>
+        <input asp-for="@Model.Description" type="text" class="form-control">
+        <span asp-validation-for="@Model.Description" class="text-danger"></span>
+    </div>
+
+
+
+    <a asp-controller="Products" asp-action="Index" class="btn btn-success"><i class="mdi mdi-folder-upload"></i>Go Back</a>
+</form>
+@section Scripts{
+    <script src="https://cdn.ckeditor.com/ckeditor5/30.0.0/classic/ckeditor.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/jquery.validate.min.js"></script>
+}
+
+

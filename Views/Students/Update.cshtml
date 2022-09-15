@@ -1,0 +1,43 @@
+﻿@model Student
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1></h1>
+<form method="post" enctype="multipart/form-data">
+
+    <div class="form-group">
+        <label asp-for="@Model.Ad_Soyad"></label>
+        <input asp-for="@Model.Ad_Soyad" class="form-control">
+        <span asp-validation-for="@Model.Ad_Soyad" class="text-danger"></span>
+    </div>
+  
+    <div class="form-group">
+        <label asp-for="@Model.Elaqe_nomresi"></label>
+        <input asp-for="@Model.Elaqe_nomresi" class="form-control">
+        <span asp-validation-for="@Model.Elaqe_nomresi" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="@Model.Email"></label>
+        <input asp-for="@Model.Email" class="form-control">
+        <span asp-validation-for="@Model.Email" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label for="cars">Qrupu secin</label>
+
+        <select name="groupId" id="groupId" multiple>
+            @foreach (Group item in ViewBag.Groups)
+            {
+                <option value="@item.Id">@item.Ad </option>
+            }
+        </select>
+    </div>
+
+    <button type="submit" class="btn btn-primary"><i class="mdi mdi-folder-plus"></i>Update</button>
+    <a asp-controller="Students" asp-action="Index" class="btn btn-success"><i class="mdi mdi-folder-upload"></i>Go Back</a>
+</form>
+@section Scripts{
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/jquery.validate.min.js"></script>
+}

@@ -1,0 +1,56 @@
+﻿@model Teacher
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1></h1>
+<form method="post" enctype="multipart/form-data">
+
+    <div class="form-group">
+        <label asp-for="@Model.Ad"></label>
+        <input asp-for="@Model.Ad" class="form-control">
+        <span asp-validation-for="@Model.Ad" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="@Model.Soyad"></label>
+        <input asp-for="@Model.Soyad" class="form-control">
+        <span asp-validation-for="@Model.Soyad" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="@Model.Tevellud"></label>
+        <input asp-for="@Model.Tevellud" class="form-control">
+        <span asp-validation-for="@Model.Tevellud" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="@Model.Tehsili"></label>
+        <input asp-for="@Model.Tehsili" class="form-control">
+        <span asp-validation-for="@Model.Tehsili" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="@Model.Email"></label>
+        <input asp-for="@Model.Email" class="form-control">
+        <span asp-validation-for="@Model.Email" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="@Model.Elaqe_nomresi"></label>
+        <input asp-for="@Model.Elaqe_nomresi" class="form-control">
+        <span asp-validation-for="@Model.Elaqe_nomresi" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label for="exampleFormControlSelect1">Category</label>
+        <select class="form-control" name="courseId">
+            <option></option>
+            @foreach (Course item in ViewBag.Course)
+            {
+                <option value="@item.Id">@item.Ad</option>
+            }
+        </select>
+    </div>
+
+    <button type="submit" class="btn btn-primary"><i class="mdi mdi-folder-plus"></i>Create</button>
+    <a asp-controller="Teachers" asp-action="Index" class="btn btn-success"><i class="mdi mdi-folder-upload"></i>Go Back</a>
+</form>
+@section Scripts{
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/jquery.validate.min.js"></script>
+}

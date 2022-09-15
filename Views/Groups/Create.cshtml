@@ -1,0 +1,59 @@
+﻿@model Group
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Qrup</h1>
+<form method="post" enctype="multipart/form-data">
+
+    <div class="form-group">
+        <label asp-for="@Model.Ad"></label>
+        <input asp-for="@Model.Ad" class="form-control">
+        <span asp-validation-for="@Model.Ad" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="@Model.Vaxt"></label>
+        <input asp-for="@Model.Vaxt" class="form-control">
+        <span asp-validation-for="@Model.Vaxt" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="@Model.Telebe_sayi"></label>
+        <input asp-for="@Model.Telebe_sayi" class="form-control">
+        <span asp-validation-for="@Model.Telebe_sayi" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label for="exampleFormControlSelect1">Müəllim</label>
+        <select class="form-control" name="teacherId">
+            <option></option>
+            @foreach (Teacher item in ViewBag.Teacher)
+            {
+                <option value="@item.Id">@item.Ad</option>
+            }
+        </select>
+    </div>
+   
+
+    <button type="submit" class="btn btn-primary"><i class="mdi mdi-folder-plus"></i>Create</button>
+    <a asp-controller="Groups" asp-action="Index" class="btn btn-success"><i class="mdi mdi-folder-upload"></i>Go Back</a>
+</form>
+@section Scripts{
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/jquery.validate.min.js"></script>
+<script>
+
+    var SaveList = function{
+
+        var arrItem=[]
+
+
+
+
+    }
+
+
+
+
+
+</script>
+}

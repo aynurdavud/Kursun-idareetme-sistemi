@@ -1,0 +1,88 @@
+﻿@model List<Group>
+@{
+    ViewData["Title"] = "Index";
+
+}
+
+<div class="col-lg-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Qruplar</h4>
+            <a asp-action="Create" class="btn btn-facebook"><i class="mdi mdi-folder-plus"></i>Əlavə et</a>
+            <div class="table-responsive">
+                <table id="myTable" class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>Qrupun adı</th>
+                            <th>Vaxt</th>
+                            <th>Tələbə sayı</th>
+                            <th>Müəllimin adı</th>
+                            <th>Kursun adı</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (Group item in Model)
+                        {
+                            <tr>
+                                <td>@item.Ad</td>
+
+                                <td>
+                                    @item.Vaxt
+                                </td>
+                                <td>
+                                    @item.Telebe_sayi
+                                </td>
+                                <td>
+                                    @item.teacher.Ad
+                                </td>
+                                <td>
+                                    @item.teacher.course.Ad
+                                </td>
+                                <td>
+                                    @if (item.IsDeactive)
+                                    {
+                                        <span class="text-danger">Deaktiv</span>
+                                    }
+                                    else
+                                    {
+                                        <span class="text-success">Aktiv</span>
+                                    }
+                                </td>
+
+                                <td>
+                                    @if (item.IsDeactive)
+                                    {
+                                        <a asp-action="Activity" asp-route-id="@item.Id" class="btn btn-secondary"><i class="mdi mdi-folder-download"></i>Aktivləşdir</a>
+                                    }
+                                    else
+                                    {
+                                        <a asp-action="Activity" asp-route-id="@item.Id" class="btn btn-danger"><i class="mdi mdi-delete"></i>Sil</a>
+                                    }
+                                    <a asp-action="Update" asp-route-id="@item.Id" class="btn btn-success"><i class="mdi mdi-folder-plus"></i>Yenilə</a>
+
+                                </td>
+
+
+                            </tr>
+                        }
+
+
+
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+@section Scripts{
+    <script>
+    $(document).ready(function () {
+        $('#myTable').DataTable();
+    });
+    </script>
+
+}
+

@@ -1,0 +1,32 @@
+﻿@model Course
+@{
+    ViewData["Title"] = "Update";
+}
+
+<h1>Update</h1>
+
+<form method="post" enctype="multipart/form-data">
+
+    <div class="form-group">
+        <label asp-for="@Model.Ad"></label>
+        <textarea asp-for="@Model.Ad" class="form-control"></textarea>
+        <span asp-validation-for="@Model.Ad" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="@Model.Qrup_sayi"></label>
+        <textarea asp-for="@Model.Qrup_sayi" class="form-control"></textarea>
+        <span asp-validation-for="@Model.Qrup_sayi" class="text-danger"></span>
+    </div>
+
+
+    <button type="submit" class="btn btn-primary"><i class="mdi mdi-folder-plus"></i>Update</button>
+    <a asp-controller="Courses" asp-action="Index" class="btn btn-success"><i class="mdi mdi-folder-upload"></i>Go Back</a>
+</form>
+@section Scripts{
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/jquery.validate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.11/jquery.validate.unobtrusive.min.js"></script>
+
+
+}
+

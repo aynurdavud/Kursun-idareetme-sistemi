@@ -1,0 +1,101 @@
+﻿@model LoginVM
+@{
+    ViewData["Title"] = "Login";
+    Layout = null;
+
+}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Login</title>
+    <!-- plugins:css -->
+    <link rel="stylesheet" href="~/admin/vendors/mdi/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="~/admin/vendors/base/vendor.bundle.base.css">
+    <!-- endinject -->
+    <!-- plugin css for this page -->
+    <!-- End plugin css for this page -->
+    <!-- inject:css -->
+    <link rel="stylesheet" href="~/admin/css/style.css">
+    <!-- endinject -->
+    <link rel="shortcut icon" href="~/admin/images/favicon.png" />
+    <script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=sGm2gZkBXuV_f98uWvYI69Xd-npaUb7seESUCyl_8n4Qht7WnPQ7xjotpYkjDrOCyIbQgKnNmWMG32WMq8Q-Syxo1NbubcUSFitcDVXB9RC1MMSBkNo_M0V1SO3nqIUnnHnby9E_oXoE6Y4qXSZnEadjJsJFQXugSOViPxZ9tMtZilZ3M7GV_G0Grn6K-1eyHoRVEkf3JuvWo8suBErjef1C-8m8tZ054Ncm0zjTkizL6ihnjniurQHu3q4SWJIk9Bo2ymQs0OxjX2t8bRWDbDfu3Iug4HjLnOJni_WUC_FenGGfuY2ttRVbuXoJwo8-phopg3ZICzJyTJD8YfxuwHvLHKkx1iLkt1MhGDxXlhnoYCNDPEaqQg0WDUhnKsl8njCti2kgfWYwqPZ6mGcgcPi7h0rlLmg-oJWdEZ6OQajNmh2pXq2csRrp1bhDQPAdsk6xyXWMt0DBGb0typCgeCmlzSDrkslZ_4uxa6jY_ylQ3aA9HdpNOegd1XEOKs36sKsQ4tmAw2-0KekMyPIH16MDSXjFw8kgkk__NJ40_TkpQypkjzA-1qg4pCcLOat_sHT09jrq42XNqrxqxH-T8EYZY6nQTCvVikaqoEg-_JQaNVPNqd-q5YPTaPARZ6HSOOUqJYycF7s6BwwzLm19Ltya33-lfC4PSDUokbxT-sfYzLpG8zV4_IJidI0Qpkc-87n0SxqmPVE8975BWT1xrhNtYWnOwrWaBXx64xQpMfG6eKHCe2h09xzliEJqiu9i-yr7WRAm1o7xITpfh4iWH31pxhmAMsjOVSQwrURAV1kC4LO0cRwJhOIwJifCtqFwkVRYlbhNhElIDeX_8xKhnKsuOtZv909--ZA0nUzrrRQXf_qeTJ1csKG0603VO_JfOPES5HBzRTPFPT7URW0ZRnw8Y6XoWegWqCS0laYmNMwnN9jiqVlXVqOBQq6ZT7rIs97c5mpCrNvCqDu4Hj9RdNXpLfsrDN-RKdWRCELPFlnmJZT-SVMQr-38xxA6Luvu69K_4jQpCqHy1qnOra1iaVINziItXKJJOmK7zBU7Ui-U4-8o0jYzhIuR2YmdQRBe--UeFMxzNek_lD7ywnB9gXX6m_UygH9gijpcFmQcCwNR0PzMFXb3wjwpyXOTZ-yvWIEdW_0A_La-wsmtdtja--CKMKx1mdSBN4XgRtdWW04LoyR24A58a0GDLBo9umVmeay2mElK7YC01WilXkL4aKl6VwFh89Ge9UEHD8LIkaY" charset="UTF-8"></script>
+</head>
+
+<body>
+    <div class="container-scroller">
+        <div class="container-fluid page-body-wrapper full-page-wrapper">
+            <div class="content-wrapper d-flex align-items-stretch auth auth-img-bg">
+                <div class="row flex-grow">
+                    <div class="col-lg-6 d-flex align-items-center justify-content-center">
+                        <div class="auth-form-transparent text-left p-3">
+                            <div class="brand-logo">
+                                
+                            </div>
+
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                            <form method="post" class="pt-3">
+                                <div class="form-group">
+                                    <label>Email</label>
+                                    <div class="input-group">
+                                        <div class="input-group-prepend bg-transparent">
+                                            <span class="input-group-text bg-transparent border-right-0">
+                                                <i class="mdi mdi-email-outline text-primary"></i>
+                                            </span>
+                                        </div>
+                                        <input asp-for="Email" class="form-control form-control-lg border-left-0" placeholder="Email">
+                                    </div>
+                                    <span asp-validation-for="Email" class="text-danger"></span>
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Password</label>
+                                    <div class="input-group">
+                                        <div class="input-group-prepend bg-transparent">
+                                            <span class="input-group-text bg-transparent border-right-0">
+                                                <i class="mdi mdi-lock-outline text-primary"></i>
+                                            </span>
+                                        </div>
+                                        <input asp-for="Password" class="form-control form-control-lg border-left-0" id="exampleInputPassword" placeholder="Password">
+                                    </div>
+                                    <span asp-validation-for="Password" class="text-danger"></span>
+                                </div>
+
+                                <div class="mt-3">
+
+                                    <button type="submit" class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn">Daxil ol</button>
+                                </div>
+                               
+                                
+                               
+                            </form>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 register-half-bg d-flex flex-row">
+                      
+                    </div>
+                </div>
+            </div>
+            <!-- content-wrapper ends -->
+        </div>
+        <!-- page-body-wrapper ends -->
+    </div>
+    <!-- container-scroller -->
+    <!-- plugins:js -->
+    <script src="~/admin/vendors/base/vendor.bundle.base.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/jquery.validate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.11/jquery.validate.unobtrusive.min.js"></script>
+
+
+    <!-- endinject -->
+    <!-- inject:js -->
+    <script src="~/admin/js/off-canvas.js"></script>
+    <script src="~/admin/js/hoverable-collapse.js"></script>
+    <script src="~/admin/js/template.js"></script>
+    <!-- endinject -->
+</body>
+
+</html>
